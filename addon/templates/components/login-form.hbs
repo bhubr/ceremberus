@@ -1,1 +1,11 @@
 {{yield}}
+
+{{#if hasError}}
+<div>Error: {{errorMsg}}</div>
+{{/if}}
+<form {{action "authentifyUser" on="submit" preventDefault=true}}>
+  {{input value=email placeholder="Email" size="30"}}
+  {{input value=password placeholder="Password" size="30"}}
+  <input type="submit" class="primary" value="Submit" />
+</form>
+

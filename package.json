@@ -1,6 +1,6 @@
 {
   "name": "ceremberus",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A set of Ember components for user registration&login.",
   "directories": {
     "doc": "doc",
