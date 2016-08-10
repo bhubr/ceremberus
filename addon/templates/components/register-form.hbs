@@ -1,0 +1,15 @@
+{{yield}}
+
+{{#if hasError}}
+<div>Error: {{errorMsg}}</div>
+{{/if}}
+<form {{action "createUser" on="submit" preventDefault=true}}>
+  {{input value=email placeholder="Email" size="30"}}
+  {{input value=userName placeholder="User name" size="30"}}
+  {{input value=firstName placeholder="First name" size="30"}}
+  {{input value=lastName placeholder="Last name" size="30"}}
+  {{input value=birthDate placeholder="Birth date" size="30"}}
+  {{input value=password placeholder="Password" size="30"}}
+  {{input value=passwordConfirm placeholder="Password confirm" size="30"}}
+  <input type="submit" class="primary" value="Submit" />
+</form>
