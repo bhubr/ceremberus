@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/lostpass-form';
 
 export default Ember.Component.extend({
-  layout
+  layout,
   ajax: Ember.inject.service(),
   hasError: false,
   actions: {
