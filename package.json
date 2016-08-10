@@ -1,7 +1,7 @@
 {
   "name": "ceremberus",
   "version": "0.0.1",
-  "description": "A set of components for user registration&login.",
+  "description": "A set of Ember components for user registration&login.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -48,5 +48,7 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "author": "t1z <littlebuddha31@gmail.com>",
+  "license": "WTFPL"
 }
