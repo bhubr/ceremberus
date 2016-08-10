@@ -1,0 +1,9 @@
+{{yield}}
+
+{{#if hasError}}
+<div>Error: {{errorMsg}}</div>
+{{/if}}
+<form {{action "lostpassEmail" on="submit" preventDefault=true}}>
+  {{input value=email placeholder="Email" size="30"}}
+  <input type="submit" class="primary" value="Submit" />
+</form>
