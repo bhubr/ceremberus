@@ -12,7 +12,7 @@ export default Ember.Component.extend({
       return this.get('ajax').request('/auth/login', {
         method: 'POST',
         data: JSON.stringify({
-          email: this.get('email'),
+          username: this.get('email'),
           password: this.get('password')
         }),
         headers: {
