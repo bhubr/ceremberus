@@ -3,6 +3,8 @@ import layout from '../templates/components/register-form';
 
 export default Ember.Component.extend({
   layout,
+  ajax: Ember.inject.service(),
+  authBroker: Ember.inject.service(),
   hasError: false,
   actions: {
     createUser() {
@@ -12,16 +14,25 @@ export default Ember.Component.extend({
         return;
       }
       this.set('hasError', false);
-      let newUser = this.get('store').createRecord('user', {
-        email: this.get('email'),
-        userName: this.get('userName'),
-        firstName: this.get('firstName'),
-        lastName: this.get('lastName'),
-        birthDate: this.get('birthDate'),
-        password: this.get('password')
+      return this.get('ajax').request('/auth/register', {
+        method: 'POST',
+        data: JSON.stringify({
+          email: this.get('email'),
+          "first-name": this.get('firstName'),
+          "last-name": this.get('lastName'),
+          password: this.get('password')
+        }),
+        headers: {
+          'content-type': 'application/vnd.api+json'
+        }
+      })
+      .then(result => {
+        console.log('ok', result.user);
+        this.get('authBroker').login(result.user);
+      })
+      .catch(err => {
+        console.log('nok', err);
       });
-      console.log(newUser);
-      newUser.save();
     }
   }
 });
